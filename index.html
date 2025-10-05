@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>周丹小仙女，中秋快乐🌕</title>
+  <style>
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 0.8; }
+      50% { transform: translateY(-15px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 0.8; }
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url('assets/moon-bg.jpg') center/cover no-repeat;
+      font-family: "STKaiti", "KaiTi", serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff8e1;
+      text-align: center;
+      overflow: hidden;
+    }
+    .title {
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      animation: float 4s ease-in-out infinite;
+      text-shadow: 0 0 12px rgba(255,255,255,0.8);
+    }
+    .poem {
+      margin-top: 2rem;
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 90%;
+      background: rgba(0,0,0,0.3);
+      padding: 1.2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+    .footer {
+      position: absolute;
+      bottom: 1rem;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="title">周丹小仙女 🌕 中秋快乐</div>
+  <div class="poem">
+    月光洒落如银霜，桂影浮动映柔光；<br>
+    清风一曲思悠远，夜曲轻吟梦未央。<br><br>
+    愿你此夜明月相伴，心似莲开，温柔安然；<br>
+    愿团圆与笑声常驻人间，<br>
+    岁月柔情，皆成诗篇。
+  </div>
+  <div class="footer">—— 献给周丹小仙女的一轮明月与一段旋律 🌙</div>
+
+  <!-- 自动播放音乐 -->
+  <audio id="music" src="assets/yequ_intro.mp3" autoplay loop></audio>
+
+  <script>
+    document.addEventListener('WeixinJSBridgeReady', function() {
+      document.getElementById('music').play();
+    });
+    document.addEventListener('touchstart', function() {
+      const m = document.getElementById('music');
+      if (m.paused) m.play();
+    }, { once: true });
+  </script>
+</body>
+</html>
